@@ -197,3 +197,24 @@ fedex.freight_rates({
 
   console.log(res);
 });
+
+/**
+ * Address Validation
+*/
+fedex.validate({
+  AddressesToValidate: {
+    Address: {
+      StreetLines: '1 Apple Ln',
+      City: 'Eagle', 
+      StateOrProvinceCode: 'ID',
+      PostalCode: '83440',
+      CountryCode: 'US'
+    }
+  }
+}, function(err, res) {
+  if(err) {
+    return console.log(err);
+  }
+
+  console.log(util.inspect(res, false, null, true))
+});

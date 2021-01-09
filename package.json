@@ -1,13 +1,13 @@
 {
   "name": "fedex",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "FedEx API for Node.JS",
   "author": {
-    "name": "Sundarrajan K | hephesthesis"
+    "name": "Fedex"
   },
   "maintainers": [
     {
-      "name": "Sundarrajan K"
+      "name": "Anthony Weebb"
     }
   ],
   "repository": {
