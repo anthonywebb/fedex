@@ -200,7 +200,7 @@ fedex.freight_rates({
 
 /**
  * Address Validation
-*/
+ */
 fedex.validate({
   AddressesToValidate: {
     Address: {
@@ -210,6 +210,34 @@ fedex.validate({
       PostalCode: '83440',
       CountryCode: 'US'
     }
+  }
+}, function(err, res) {
+  if(err) {
+    return console.log(err);
+  }
+
+  console.log(util.inspect(res, false, null, true))
+});
+
+/**
+ * FEDEX LOCATIONS
+ */
+fedex.locations({
+  LocationsSearchCriterion: 'ADDRESS',
+  Address: {
+    StreetLines: '1 Apple Ln',
+    City: 'Eagle', 
+    StateOrProvinceCode: 'UT',
+    PostalCode: '84106',
+    CountryCode: 'US'
+  },
+  MultipleMatchesAction: 'RETURN_ALL',
+  SortDetail: {
+    Criterion: 'DISTANCE',
+    Order: 'LOWEST_TO_HIGHEST'
+  },
+  Constraints: {
+    RequiredLocationAttributes: 'RETURNS_SERVICES'
   }
 }, function(err, res) {
   if(err) {
